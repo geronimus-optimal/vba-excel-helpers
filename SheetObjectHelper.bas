@@ -1,15 +1,15 @@
 Attribute VB_Name = "SheetObjectHelper"
 Public Function GetNewSheet(Optional Name As String = "") As Worksheet
     Dim newSheet As Worksheet
-    Set newSheet = GetNewBook().Sheets(1)
+    Set newSheet = CreateNewBook().Sheets(1)
     If Name <> "" Then
         newSheet.Name = Name
     End If
     Set GetNewSheet = newSheet
 End Function
 
-Public Function GetNewBook() As Workbook
-    Set GetNewBook = Application.Workbooks.Add
+Public Function CreateNewBook() As Workbook
+    Set CreateNewBook = Application.Workbooks.Add
 End Function
 
 Public Sub DiscardWorkbook(theWorkbook As Workbook)
